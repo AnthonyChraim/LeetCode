@@ -13,12 +13,16 @@ public class jewelsAndStones {
 		String J = "aA";
 		String S = "aAAbbbb";
 		
-		System.out.println(jewelsAndStones(J, S));
 
 	}
 
-	public static int jewelsAndStones(String J, String S) {
+	public int numStones(String J, String S) {
+		
+		if (J == null || S == null || J.length() == 0 || S.length() == 0)
+            return 0;
+		
 		int total = 0;
+		
 		
 		for(int i = 0; i < J.length(); i++) {
 			for(int j = 0; j < S.length(); j++) {
@@ -29,5 +33,26 @@ public class jewelsAndStones {
 		
 		return total;
 	}
+	
+	public int numJewelsInStones(String J, String S) {
+        // Corner cases.
+        if (J == null || S == null || J.length() == 0 || S.length() == 0)
+            return 0;
+        
+        // Map char to its frequency in S.
+        int[] charToFreq = new int[256]; 
+        for (char ch : S.toCharArray()) {	//converts string to char array
+            charToFreq[ch]++;
+        }
+        
+        int numJewels = 0; // Number of jewels among stones.
+        for (char ch : J.toCharArray()) {
+            if (charToFreq[ch] > 0) {
+                numJewels += charToFreq[ch];
+            }
+        }
+        
+        return numJewels;
+    }
 
 }
