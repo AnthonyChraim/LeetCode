@@ -11,13 +11,12 @@ public class sumAndProd {
 		
 	}
 
+	
 	public static int substractProductAndSum(int n) {
 			int product = 1;
 			int sum = 0;
 			
-			for(int i = 0; i < 5; i++) {
-				if( n == 0)
-					break;
+			while(n != 0) {
 				product *= n % 10 ;
 				sum += n % 10;
 				n /= 10;	
