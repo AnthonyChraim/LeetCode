@@ -11,6 +11,7 @@ public class evenNumOfDigits {
 //
 	}
 	
+	//first try
 	public static int findNumbers (int[] nums) {
 		int finalNum = 0;
 		for(int i =0; i < nums.length; i++) {
@@ -29,6 +30,7 @@ public class evenNumOfDigits {
 				.count();
 	}
 	
+	//most optimized
 	public static int findNumbers3 (int[] nums) {
 		int finalNum = 0;
 		
